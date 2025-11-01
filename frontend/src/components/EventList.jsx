@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
-const API_URL = "http://localhost:3030/api/events";
+const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3030";
+const API_URL = `${BACKEND_URL}/api/events`;
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
   if (!lat1 || !lon1 || !lat2 || !lon2) return null;

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
-const API_URL = "http://localhost:3030/api/events";
+const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3030";
+const API_URL = `${BACKEND_URL}/api/events`;
 
 export default function EventDetail() {
   const { id } = useParams();

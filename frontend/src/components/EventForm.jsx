@@ -1,8 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-const API_URL = "http://localhost:3030/api/events";
+const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3030";
+console.log("Backend URL:", BACKEND_URL);
+const API_URL = `${BACKEND_URL}/api/events`;
 
 export default function EventForm() {
   const [formData, setFormData] = useState({
